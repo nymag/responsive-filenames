@@ -1,5 +1,27 @@
 # filename-breakpoints
-Easy CSS Breakpoints
+📚📲 _"Easy CSS Breakpoints"_
+
+This module allows you to easily delineate media query breakpoints by file name. For example, say we have five files:
+
+```
+all.css
+print.css
+0-600.css
+600-1024.css
+1024+.css
+```
+
+With filename-breakpoints, you can write css in these files without worrying about cascading across media queries. The print stylesheet would be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `filename-breakpoints`).
+
+To mitigate issues with older browsers and zooming, we use `em`s internally, so your 0-600 stylesheet will be wrapped in:
+
+```css
+@media screen and (min-width: 0em) and (max-width: 37.499em) {
+  /* styles */
+}
+```
+
+In plain English, this is equivalent to "zero pixels up to (but not including) 600 pixels". You can specify any viewport size, and even have overlapping viewports (e.g. if you have a mobile + tablet stylesheet, then some specific tablet fixes).
 
 # Install
 
@@ -10,8 +32,6 @@ npm install --save filename-breakpoints
 If you want to use it in your terminal, you can also install it globally.
 
 # Usage
-
-**NOTE:** The order of the files/globs you pass in is preserved, but globs themselves (usually) rely on filename order. [Read more about globbing](https://www.npmjs.com/package/glob#glob-primer).
 
 ## Command line
 
@@ -51,6 +71,8 @@ fnbp('css/*.css', 'otherstyles/**');
 ```
 
 You can pass the same file arguments into the asynchronous and synchronous functions.
+
+**NOTE:** The order of the files/globs you pass in is preserved, but globs themselves (usually) rely on filename order. [Read more about globbing](https://www.npmjs.com/package/glob#glob-primer).
 
 ### Asynchronous
 
