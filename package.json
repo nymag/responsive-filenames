@@ -9,6 +9,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin": {
+    "responsive-filenames": "lib/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/nymag/responsive-filenames.git"
@@ -25,6 +28,13 @@
     "sinon": "^1.14.1"
   },
   "dependencies": {
-    "glob": "^5.0.3"
+    "chalk": "^1.0.0",
+    "conditional-stream": "0.0.1",
+    "gulp-concat": "^2.5.2",
+    "lodash": "^3.6.0",
+    "through2-filter": "^1.4.1",
+    "vinyl-fs": "^1.0.0",
+    "vinyl-map": "^1.0.1",
+    "yargs": "^3.6.0"
   }
 }
