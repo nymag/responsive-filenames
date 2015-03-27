@@ -1,4 +1,4 @@
-# filename-breakpoints
+# responsive-filenames
 📚📲 _"Easy CSS Breakpoints"_
 
 This module allows you to easily delineate media query breakpoints by file name. For example, say we have five files:
@@ -11,7 +11,7 @@ print.css
 1024+.css
 ```
 
-With filename-breakpoints, you can write css in these files without worrying about cascading across media queries. The print stylesheet would be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `filename-breakpoints`).
+With responsive-filenames, you can write css in these files without worrying about cascading across media queries. The print stylesheet would be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `responsive-filenames`).
 
 To mitigate issues with older browsers and zooming, we use `em`s internally, so your 0-600 stylesheet will be wrapped in:
 
@@ -26,7 +26,7 @@ In plain English, this is equivalent to "zero pixels up to (but not including) 6
 # Install
 
 ```
-npm install --save filename-breakpoints
+npm install --save responsive-filenames
 ```
 
 If you want to use it in your terminal, you can also install it globally.
@@ -36,15 +36,15 @@ If you want to use it in your terminal, you can also install it globally.
 ## Command line
 
 ```bash
-filename-breakpoints input1.css [input2.css ...] [options]
+responsive-filenames input1.css [input2.css ...] [options]
 ```
 
-You can pass a list of files or a glob pattern (or a list of glob patterns, if you want) into filename-breakpoints. These are all valid:
+You can pass a list of files or a glob pattern (or a list of glob patterns, if you want) into responsive-filenames. These are all valid:
 
 ```bash
-filename-breakpoints path/to/file1.css path/to/file2.css
-filename-breakpoints css/*.css
-filename-breakpoints css/*.css otherstyles/**
+responsive-filenames path/to/file1.css path/to/file2.css
+responsive-filenames css/*.css
+responsive-filenames css/*.css otherstyles/**
 ```
 
 By default the compiled css will output to stdout. You can also pass `-o filename` (or `--output filename`) to write it to a file.
@@ -52,12 +52,12 @@ By default the compiled css will output to stdout. You can also pass `-o filenam
 ## In Node
 
 ```js
-var fnbp = require('filename-breakpoints');
+var fnbp = require('responsive-filenames');
 ```
 
 ### Flexible file arguments
 
-Filename-breakpoints is very flexible about the arguments you pass in. You can give it a glob or an array of globs, or even multiple file arguments. These are all valid:
+responsive-filenames is very flexible about the arguments you pass in. You can give it a glob or an array of globs, or even multiple file arguments. These are all valid:
 
 ```js
 fnbp('path/to/file1.css');
@@ -73,7 +73,7 @@ You can pass the same file arguments into the asynchronous and synchronous funct
 ### Asynchronous
 
 ```js
-var fnbp = require('filename-breakpoints');
+var fnbp = require('responsive-filenames');
 
 fnbp('css/*.css', function (err, css) {
   if (!err) {
@@ -85,7 +85,7 @@ fnbp('css/*.css', function (err, css) {
 ### Synchronous
 
 ```js
-var fnbp = require('filename-breakpoints'),
+var fnbp = require('responsive-filenames'),
   css = fnbp.sync('css/*.css');
 ```
 
@@ -95,7 +95,7 @@ This module's async function follows node best practices, so you can easily prom
 
 ```js
 var Promise = require('bluebird'),
-  fnbp = Promise.promisify(require('filename-breakpoints'));
+  fnbp = Promise.promisify(require('responsive-filenames'));
 
 fnbp('css/*.css')
   .then(function (css) {
@@ -108,10 +108,10 @@ fnbp('css/*.css')
 
 ## In Gulp (and other build tools)
 
-If you pass a stream into filename-breakpoints, it'll compile each file individually and output them as another stream.
+If you pass a stream into responsive-filenames, it'll compile each file individually and output them as another stream.
 
 ```js
-var fnbp = require('filename-breakpoints');
+var fnbp = require('responsive-filenames');
 
 gulp.src('**/*.css')
   .pipe(fnbp())
