@@ -1,0 +1,30 @@
+{
+  "name": "responsive-filenames",
+  "version": "0.0.1",
+  "description": "Easy CSS Breakpoints",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nymag/responsive-filenames.git"
+  },
+  "author": "New York Media",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nymag/responsive-filenames/issues"
+  },
+  "homepage": "https://github.com/nymag/responsive-filenames",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.1",
+    "sinon": "^1.14.1"
+  },
+  "dependencies": {
+    "glob": "^5.0.3"
+  }
+}
