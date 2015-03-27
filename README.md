@@ -47,11 +47,7 @@ filename-breakpoints css/*.css
 filename-breakpoints css/*.css otherstyles/**
 ```
 
-By default the compiled css will output to stdout. You can also pass some arguments:
-
-* `-o` or `--output` with a filename outputs a compiled css file
-* `-v` or `--verbose` lets you know exactly what's going on _in excruciating detail_
-* `-V` or `--version` prints version number and exits
+By default the compiled css will output to stdout. You can also pass `-o filename` (or `--output filename`) to write it to a file.
 
 ## In Node
 
