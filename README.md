@@ -52,7 +52,7 @@ By default the compiled css will output to stdout. You can also pass `-o filenam
 ## In Node
 
 ```js
-var fnbp = require('responsive-filenames');
+var rfn = require('responsive-filenames');
 ```
 
 ### Flexible file arguments
@@ -60,10 +60,10 @@ var fnbp = require('responsive-filenames');
 responsive-filenames is very flexible about the arguments you pass in. You can give it a glob or an array of globs, or even multiple file arguments. These are all valid:
 
 ```js
-fnbp('path/to/file1.css');
-fnbp(['path/to/file1.css', 'path/to/file2.css']);
-fnbp('css/*.css');
-fnbp('css/*.css', 'otherstyles/**');
+rfn('path/to/file1.css');
+rfn(['path/to/file1.css', 'path/to/file2.css']);
+rfn('css/*.css');
+rfn('css/*.css', 'otherstyles/**');
 ```
 
 You can pass the same file arguments into the asynchronous and synchronous functions.
@@ -73,9 +73,9 @@ You can pass the same file arguments into the asynchronous and synchronous funct
 ### Asynchronous
 
 ```js
-var fnbp = require('responsive-filenames');
+var rfn = require('responsive-filenames');
 
-fnbp('css/*.css', function (err, css) {
+rfn('css/*.css', function (err, css) {
   if (!err) {
     // do something with the compiled css!
   }
@@ -85,8 +85,8 @@ fnbp('css/*.css', function (err, css) {
 ### Synchronous
 
 ```js
-var fnbp = require('responsive-filenames'),
-  css = fnbp.sync('css/*.css');
+var rfn = require('responsive-filenames'),
+  css = rfn.sync('css/*.css');
 ```
 
 ### But what about promises?
@@ -95,9 +95,9 @@ This module's async function follows node best practices, so you can easily prom
 
 ```js
 var Promise = require('bluebird'),
-  fnbp = Promise.promisify(require('responsive-filenames'));
+  rfn = Promise.promisify(require('responsive-filenames'));
 
-fnbp('css/*.css')
+rfn('css/*.css')
   .then(function (css) {
     // do something with the compiled css!
   })
@@ -111,10 +111,10 @@ fnbp('css/*.css')
 If you pass a stream into responsive-filenames, it'll compile each file individually and output them as another stream.
 
 ```js
-var fnbp = require('responsive-filenames');
+var rfn = require('responsive-filenames');
 
 gulp.src('**/*.css')
-  .pipe(fnbp())
+  .pipe(rfn())
   .pipe(concat())
   .pipe(cssmin())
   .pipe(gulp.dest('compiled.css'));
