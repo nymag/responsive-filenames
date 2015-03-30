@@ -1,6 +1,9 @@
 # responsive-filenames
 📚📲 _"Easy CSS Breakpoints"_
 
+[![Build Status](https://travis-ci.org/nymag/responsive-filenames.svg)](https://travis-ci.org/nymag/responsive-filenames)
+[![Code Climate](https://codeclimate.com/github/nymag/responsive-filenames/badges/gpa.svg)](https://codeclimate.com/github/nymag/responsive-filenames)
+
 This module allows you to easily delineate media query breakpoints by file name. For example, say we have five files:
 
 ```
