@@ -24,8 +24,7 @@
   "homepage": "https://github.com/nymag/responsive-filenames",
   "devDependencies": {
     "chai": "^2.2.0",
-    "mocha": "^2.2.1",
-    "sinon": "^1.14.1"
+    "mocha": "^2.2.1"
   },
   "dependencies": {
     "chalk": "^1.0.0",
