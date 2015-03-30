@@ -14,17 +14,20 @@ print.css
 1024+.css
 ```
 
-With responsive-filenames, you can write css in these files without worrying about cascading across media queries. The print stylesheet will be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `responsive-filenames`).
-
-To mitigate issues with older browsers and zooming, we use `em`s internally, so your 0-600 stylesheet will be wrapped in:
+With responsive-filenames, you can write css in these files without worrying about cascading across media queries. The print stylesheet will be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `responsive-filenames`). A stylesheet called `0-600.css` will look like:
 
 ```css
-@media screen and (min-width: 0em) and (max-width: 37.499em) {
+@media screen and (min-width: 0px) and (max-width: 599.99px) {
   /* styles */
 }
 ```
 
-In plain English, this is equivalent to "zero pixels up to (but not including) 600 pixels". You can specify any viewport size, and even have overlapping viewports (e.g. if you have a mobile + tablet stylesheet, then some specific tablet fixes).
+You can specify any viewport size, and even have overlapping viewports. For example, you can have a combined mobile and tablet stylesheet, and some separate tablet fixes:
+
+```
+0-1024.css
+600-1024.css
+```
 
 # Install
 
