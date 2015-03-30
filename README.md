@@ -42,10 +42,10 @@ If you want to use it in your terminal, you can also install it globally.
 responsive-filenames input1.css [input2.css ...] [options]
 ```
 
-You can pass a list of files or a glob pattern (or a list of glob patterns, if you want) into responsive-filenames. These are all valid:
+You can pass multiple files or glob patterns into responsive-filenames. These are all valid:
 
 ```bash
-responsive-filenames path/to/file1.css path/to/file2.css
+responsive-filenames path/to/file1.css
 responsive-filenames css/*.css
 responsive-filenames css/*.css otherstyles/**
 ```
