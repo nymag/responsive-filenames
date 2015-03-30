@@ -11,7 +11,7 @@ print.css
 1024+.css
 ```
 
-With responsive-filenames, you can write css in these files without worrying about cascading across media queries. The print stylesheet would be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `responsive-filenames`).
+With responsive-filenames, you can write css in these files without worrying about cascading across media queries. The print stylesheet will be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `responsive-filenames`).
 
 To mitigate issues with older browsers and zooming, we use `em`s internally, so your 0-600 stylesheet will be wrapped in:
 
@@ -53,27 +53,6 @@ By default the compiled css will output to stdout. You can also pass `-o filenam
 
 ```js
 var rfn = require('responsive-filenames');
-```
-
-### Flexible file arguments
-
-responsive-filenames is very flexible about the arguments you pass in. You can give it a glob or an array of globs, or even multiple file arguments. These are all valid:
-
-```js
-rfn('path/to/file1.css');
-rfn(['path/to/file1.css', 'path/to/file2.css']);
-rfn('css/*.css');
-rfn('css/*.css', 'otherstyles/**');
-```
-
-You can pass the same file arguments into the asynchronous and synchronous functions.
-
-**NOTE:** The order of the files/globs you pass in is preserved, but globs themselves (usually) rely on filename order. [Read more about globbing](https://www.npmjs.com/package/glob#glob-primer).
-
-### Asynchronous
-
-```js
-var rfn = require('responsive-filenames');
 
 rfn('css/*.css', function (err, css) {
   if (!err) {
@@ -82,12 +61,24 @@ rfn('css/*.css', function (err, css) {
 });
 ```
 
-### Synchronous
+### Flexible file arguments
+
+responsive-filenames is very flexible about the arguments you pass in. You can give it a glob or an array of globs, or even multiple file arguments. These are all valid:
 
 ```js
-var rfn = require('responsive-filenames'),
-  css = rfn.sync('css/*.css');
+var callback = function (err, css) {
+  if (!err) {
+    // do something with the compiled css!
+  }
+};
+
+rfn('path/to/file1.css', callback);
+rfn(['path/to/file1.css', 'path/to/file2.css'], callback);
+rfn('css/*.css', callback);
+rfn('css/*.css', 'otherstyles/**', callback);
 ```
+
+**NOTE:** The order of the files/globs you pass in is preserved, but globs themselves (usually) rely on filename order. [Read more about globbing](https://www.npmjs.com/package/glob#glob-primer).
 
 ### But what about promises?
 
