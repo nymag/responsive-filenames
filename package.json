@@ -1,6 +1,6 @@
 {
   "name": "responsive-filenames",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easy CSS Breakpoints",
   "main": "index.js",
   "directories": {
