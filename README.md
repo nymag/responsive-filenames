@@ -14,9 +14,7 @@ print.css
 1024+.css
 ```
 
-With responsive-filenames, you can write css in these files without worrying about cascading across media queries. The print stylesheet will be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `responsive-filenames`).
-
-To mitigate issues with older browsers and zooming, we use `em`s internally, so your 0-600 stylesheet will be wrapped in:
+With responsive-filenames, you can write css in these files without worrying about cascading across media queries. The print stylesheet will be wrapped in `@media print`, and the various viewport stylesheets get wrapped in media queries based on their file name (hence `responsive-filenames`). A stylesheet called `0-600.css` will look like:
 
 ```css
 @media screen and (min-width: 0px) and (max-width: 599.99px) {
