@@ -1,0 +1,8 @@
+@keyframes coolAnimation {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
