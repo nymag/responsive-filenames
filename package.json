@@ -23,17 +23,17 @@
   },
   "homepage": "https://github.com/nymag/responsive-filenames",
   "devDependencies": {
-    "chai": "^2.2.0",
+    "chai": "^3.4.1",
     "mocha": "^2.2.1",
     "sinon": "^1.14.1"
   },
   "dependencies": {
     "chalk": "^1.0.0",
     "gulp-concat": "^2.5.2",
-    "gulp-ignore": "^1.2.1",
+    "gulp-ignore": "^2.0.1",
     "gulp-util": "^3.0.4",
     "lodash": "^3.6.0",
-    "vinyl-fs": "^1.0.0",
+    "vinyl-fs": "^2.2.1",
     "vinyl-map": "^1.0.1",
     "yargs": "^3.6.0"
   }
