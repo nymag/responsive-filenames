@@ -33,7 +33,7 @@
     "gulp-ignore": "^2.0.1",
     "gulp-util": "^3.0.4",
     "lodash": "^4.2.1",
-    "vinyl-fs": "^2.2.1",
+    "vinyl-fs": "^2.3.3",
     "vinyl-map": "^1.0.1",
     "yargs": "^3.6.0"
   }
